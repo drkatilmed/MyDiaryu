@@ -1341,7 +1341,7 @@ footer.app-footer {
 
 <div class="app-wrapper">
 
-<!-- PENGEPALA -->
+  <!-- PENGEPALA -->
   <header class="main-header">
     <div class="brand-section">
       <img
@@ -1352,11 +1352,11 @@ footer.app-footer {
       >
       <div>
         <h1 class="brand-title">My<span class="diary-text">Diary</span></h1>
-        <p class="brand-subtitle"><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-color);"></i> Personal Memory & Life Archive</p>
+        <p class="brand-subtitle"><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-color);"></i> Personal Memory &amp; Life Archive</p>
       </div>
     </div>
 
-<div class="header-controls">
+    <div class="header-controls">
       <div class="time-prayer-cluster">
         <div class="live-clock-card" title="Masa & Tarikh Nyata">
           <i class="fa-regular fa-clock" style="color: var(--accent-color); font-size: 0.95rem;"></i>
@@ -1370,7 +1370,7 @@ footer.app-footer {
           </div>
         </div>
 
-<div class="prayer-live-badge" id="prayerLiveBadge" title="Klik untuk kemaskini lokasi solat">
+        <div class="prayer-live-badge" id="prayerLiveBadge" title="Klik untuk kemaskini lokasi solat">
           <i class="fa-solid fa-mosque prayer-icon-glow"></i>
           <div class="prayer-info-block">
             <div class="prayer-name-tag">
@@ -1382,11 +1382,11 @@ footer.app-footer {
         </div>
       </div>
 
-<button type="button" class="action-btn-header" id="headerArchiveBtn" title="Buka Arkib Catatan">
+      <button type="button" class="action-btn-header" id="headerArchiveBtn" title="Buka Arkib Catatan">
         <i class="fa-solid fa-box-archive" style="color: var(--accent-color);"></i> Arkib (<span id="headerArchiveCount">0</span>)
       </button>
 
-<div class="theme-selector-wrapper">
+      <div class="theme-selector-wrapper">
         <button type="button" class="action-btn-header" id="themeBtnToggle">
           <i class="fa-solid fa-palette"></i> Tema
         </button>
@@ -1405,29 +1405,29 @@ footer.app-footer {
     </div>
   </header>
 
-<!-- GRID UTAMA -->
+  <!-- GRID UTAMA -->
   <main class="journal-grid">
 
-<!-- LAJUR KIRI: KALENDAR & MOTIVASI -->
+    <!-- LAJUR KIRI: KALENDAR & MOTIVASI -->
     <aside class="panel left-column">
       <div class="quote-box">
         <p id="dailyQuoteText">"Setiap hari membawa peluang baharu untuk mencatat kenangan indah."</p>
         <span id="quoteDayIndicator">Hari Ini</span>
       </div>
 
-<div class="calendar-container">
+      <div class="calendar-container">
         <div class="calendar-header">
           <button type="button" class="cal-btn" id="prevMonthBtn" title="Bulan Lepas"><i class="fa-solid fa-chevron-left"></i></button>
           <span id="calendarMonthYear">Oktober 2026</span>
           <button type="button" class="cal-btn" id="nextMonthBtn" title="Bulan Hadapan"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
 
-<div class="calendar-weekdays">
+        <div class="calendar-weekdays">
           <span>Ah</span><span>Is</span><span>Se</span><span>Ra</span><span>Kh</span><span>Ju</span><span>Sa</span>
         </div>
         <div class="calendar-grid" id="calendarDaysGrid"></div>
 
-<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.7rem; color: var(--text-muted);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.7rem; color: var(--text-muted);">
           <span><i class="fa-solid fa-circle" style="color: var(--accent-color); font-size: 0.45rem;"></i> Ada Catatan</span>
           <button type="button" id="resetCalFilterBtn" style="background:none; border:none; color:var(--accent-color); font-size:0.72rem; cursor:pointer; display:none;">
             Lihat Semua
@@ -1436,61 +1436,61 @@ footer.app-footer {
       </div>
     </aside>
 
-<!-- LAJUR KANAN: EDITOR CORETAN JURNAL -->
+    <!-- LAJUR KANAN: EDITOR CORETAN JURNAL -->
     <section class="panel right-column" id="editorPanelContainer">
       <div class="panel-header">
-        <span class="panel-title" id="editorPanelTitle"><i class="fa-solid fa-pen-nib"></i> Coretan & Rancangan Baharu</span>
+        <span class="panel-title" id="editorPanelTitle"><i class="fa-solid fa-pen-nib"></i> Coretan &amp; Rancangan Baharu</span>
         <span style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);" id="editorHeaderDate">Tarikh</span>
       </div>
 
-<div class="editing-status-bar" id="editingStatusBar">
+      <div class="editing-status-bar" id="editingStatusBar">
         <span><i class="fa-solid fa-pen-to-square"></i> Sedang menyunting catatan yang dipilih</span>
         <button type="button" class="action-btn-sm" id="cancelEditModeBtn" title="Batal Suntingan" style="width: auto; padding: 0.2rem 0.6rem; font-size: 0.72rem;">
           Batal
         </button>
       </div>
 
-<form id="journalEntryForm" class="editor-form">
+      <form id="journalEntryForm" class="editor-form">
         <div style="background: var(--bg-canvas); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.65rem 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem;">
             <label for="customEntryDate" style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: flex; align-items: center; gap: 0.35rem;">
-              <i class="fa-regular fa-calendar-plus" style="color: var(--accent-color);"></i> Tarikh & Masa Catatan:
+              <i class="fa-regular fa-calendar-plus" style="color: var(--accent-color);"></i> Tarikh &amp; Masa Catatan:
             </label>
             <div style="display: flex; gap: 0.35rem; align-items: center;">
               <span id="futureStatusBadge" class="filter-badge" style="background: #3b82f6; color: #fff; display: none;">
                 <i class="fa-solid fa-rocket"></i> Rancangan Masa Depan
               </span>
               <button type="button" id="resetCurrentTimeBtn" class="action-btn-sm" style="width: auto; padding: 0.15rem 0.5rem; font-size: 0.7rem; border-radius: 9999px;">
-                <i class="fa-solid fa-rotate-left"></i> Waktu Sekarang
+                <i class="fa-solid fa-rotate-left"></i>&nbsp;Waktu Sekarang
               </button>
             </div>
           </div>
           <input type="datetime-local" id="customEntryDate" class="input-field" style="padding: 0.4rem 0.65rem; font-family: var(--font-mono); font-size: 0.82rem; cursor: pointer;">
         </div>
 
-<input type="text" id="entryTitleInput" class="input-field title-input" placeholder="Tajuk catatan atau perancangan..." required maxlength="120">
+        <input type="text" id="entryTitleInput" class="input-field title-input" placeholder="Tajuk catatan atau perancangan..." required maxlength="120">
 
-<div class="meta-row">
+        <div class="meta-row">
           <select id="entryMoodSelect" class="input-field">
-            <option value="🌸 Tenang & Bahagia">🌸 Tenang & Bahagia</option>
+            <option value="🌸 Tenang & Bahagia">🌸 Tenang &amp; Bahagia</option>
             <option value="✨ Bersemangat">✨ Bersemangat</option>
             <option value="💭 Bertafakur">💭 Bertafakur</option>
             <option value="⚡ Produktif">⚡ Produktif</option>
             <option value="🌧️ Sayu / Santai">🌧️ Sayu / Santai</option>
           </select>
 
-<select id="entryCategorySelect" class="input-field">
+          <select id="entryCategorySelect" class="input-field">
             <option value="Catatan Harian">Catatan Harian</option>
-            <option value="Perancangan & Matlamat">Perancangan & Matlamat</option>
+            <option value="Perancangan & Matlamat">Perancangan &amp; Matlamat</option>
             <option value="Kenangan Indah">Kenangan Indah</option>
-            <option value="Idea & Kreativiti">Idea & Kreativiti</option>
+            <option value="Idea & Kreativiti">Idea &amp; Kreativiti</option>
             <option value="Tugasan / Kerja">Tugasan / Kerja</option>
           </select>
         </div>
 
-<textarea id="entryContentInput" class="input-field content-textarea" placeholder="Tuliskan pengalaman, perasaan, atau rancangan masa hadapan anda di sini..." required></textarea>
+        <textarea id="entryContentInput" class="input-field content-textarea" placeholder="Tuliskan pengalaman, perasaan, atau rancangan masa hadapan anda di sini..." required></textarea>
 
-<!-- Lampiran Gambar -->
+        <!-- Lampiran Gambar -->
         <div class="media-card">
           <div class="media-header">
             <span><i class="fa-regular fa-image" style="color: var(--accent-color);"></i> Lampiran Gambar (<span id="photoCountLabel">0</span>/10)</span>
@@ -1500,18 +1500,18 @@ footer.app-footer {
               </label>
               <input type="file" id="imageFileInput" class="file-input-hidden" accept="image/*" multiple>
 
-<button type="button" class="media-action-btn" onclick="openSystemCameraDirectly()" title="Buka aplikasi kamera terus">
+              <button type="button" class="media-action-btn" onclick="openSystemCameraDirectly()" title="Buka aplikasi kamera terus">
                 <i class="fa-solid fa-camera"></i> Ambil Foto
               </button>
               <input type="file" id="cameraSystemInput" class="file-input-hidden" accept="image/*" capture="environment">
 
-<button type="button" class="media-action-btn" id="openCameraModalBtn" title="Buka lensa viewfinder 1:1">
+              <button type="button" class="media-action-btn" id="openCameraModalBtn" title="Buka lensa viewfinder 1:1">
                 <i class="fa-solid fa-expand"></i> Viewfinder 1:1
               </button>
             </div>
           </div>
 
-<!-- Dropdown Cursor Image Previewer -->
+          <!-- Dropdown Cursor Image Previewer -->
           <div class="photo-dropdown-container" id="photoDropdownContainer">
             <div class="dropdown-cursor-bar">
               <button type="button" class="cursor-nav-btn" id="prevPhotoBtn" title="Foto Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
@@ -1525,7 +1525,7 @@ footer.app-footer {
           </div>
         </div>
 
-<!-- Rakaman Audio Multi-Slot -->
+        <!-- Rakaman Audio Multi-Slot -->
         <div class="media-card">
           <div class="media-header">
             <span><i class="fa-solid fa-microphone-lines" style="color: var(--accent-color);"></i> Rakaman Suara (3 Slot)</span>
@@ -1534,7 +1534,7 @@ footer.app-footer {
             </span>
           </div>
 
-<div class="audio-slots-tabs">
+          <div class="audio-slots-tabs">
             <button type="button" class="audio-tab-btn active" onclick="switchAudioSlot(0)">
               <span class="audio-dot" id="audioDot0"></span> Audio 1
             </button>
@@ -1546,14 +1546,11 @@ footer.app-footer {
             </button>
           </div>
 
-<div class="audio-controls-row">
+          <div class="audio-controls-row">
             <button type="button" class="record-btn" id="toggleRecordBtn">
               <i class="fa-solid fa-microphone"></i> Mula Rakam
             </button>
-            <button type="button" class="media-action-btn" id="phoneRecorderBtn" title="Guna perakam suara telefon">
-              <i class="fa-solid fa-mobile-screen"></i> Perakam Telefon
-            </button>
-            <input type="file" id="audioSystemInput" class="file-input-hidden" accept="audio/*" capture>
+            <p id="audioErrorMsg" style="display:none; flex-basis:100%; font-size:0.72rem; color:#ef4444; font-weight:600;"></p>
             <audio id="audioPlaybackElement" controls style="flex: 1; min-width: 120px; height: 32px; display: none;"></audio>
             <button type="button" class="action-btn-sm delete" id="deleteAudioSlotBtn" style="display: none;" title="Padam Audio Ini">
               <i class="fa-solid fa-trash"></i>
@@ -1561,26 +1558,26 @@ footer.app-footer {
           </div>
         </div>
 
-<!-- Butang Simpan -->
+        <!-- Butang Simpan -->
         <div class="form-submit-row">
           <button type="submit" class="btn-submit-primary" id="primarySubmitBtn">
             <i class="fa-solid fa-floppy-disk"></i> Simpan Catatan
           </button>
           <button type="button" class="btn-submit-gcal" id="saveAndGoogleCalendarBtn">
-            <i class="fa-brands fa-google"></i> Simpan & Jadual di Google Calendar
+            <i class="fa-brands fa-google"></i> Simpan &amp; Jadual di Google Calendar
           </button>
         </div>
       </form>
     </section>
 
-</main>
+  </main>
 
-<!-- FOOTER: DONASI -->
+  <!-- FOOTER: DONASI -->
   <footer class="app-footer">
     <button type="button" class="donate-pill-btn" id="openDonateModalBtn">
       <i class="fa-solid fa-heart" style="color: #fd6c9e;"></i> Donate for more inovation
     </button>
-    <p>© 2026 MyDiary. Dikuasakan oleh Vanilla JS & CSS Tulen.</p>
+    <p>© 2026 MyDiary. Dikuasakan oleh Vanilla JS &amp; CSS Tulen.</p>
   </footer>
 
 </div>
@@ -1598,17 +1595,17 @@ footer.app-footer {
       <span class="confetti-piece confetti-6"></span>
     </div>
 
-<span class="joy-balloon balloon-left" title="Yay!">🎈</span>
+    <span class="joy-balloon balloon-left" title="Yay!">🎈</span>
     <span class="joy-balloon balloon-right" title="Fun!">🎉</span>
 
-<div class="joy-bouncing-mascot" id="joyMascot" title="Happy Go Lucky!">😄</div>
+    <div class="joy-bouncing-mascot" id="joyMascot" title="Happy Go Lucky!">😄</div>
 
-<div class="joy-title-pill">
+    <div class="joy-title-pill">
       <i class="fa-solid fa-face-laugh-beam" style="color: #fffb00;"></i> Joyful Memories • Happy Go Lucky!
     </div>
   </div>
 
-<div class="archive-stats-box">
+  <div class="archive-stats-box">
     <div class="archive-stats-header">
       <i class="fa-solid fa-chart-pie" style="color: var(--accent-color);"></i> Ringkasan Arkib Anda
     </div>
@@ -1632,7 +1629,7 @@ footer.app-footer {
     </div>
   </div>
 
-<div class="dropside-header">
+  <div class="dropside-header">
     <div style="font-weight: 700; font-size: 0.95rem;">
       Senarai Catatan (<span id="archiveTotalBadge">0</span>)
     </div>
@@ -1641,11 +1638,11 @@ footer.app-footer {
     </button>
   </div>
 
-<div class="dropside-search-bar">
+  <div class="dropside-search-bar">
     <input type="text" id="searchEntriesInput" class="input-field" placeholder="Cari tajuk atau isi catatan..." style="font-size: 0.8rem;">
   </div>
 
-<div class="dropside-content-scroll" id="archiveEntriesContainer"></div>
+  <div class="dropside-content-scroll" id="archiveEntriesContainer"></div>
 </aside>
 
 <!-- Butang Terapung Arkib -->
@@ -1656,15 +1653,15 @@ footer.app-footer {
 <!-- MODAL: KAMERA PERANTI (1:1) -->
 <div class="modal-backdrop" id="cameraModal">
   <div class="modal-box">
-    <button type="button" class="modal-close-btn" id="closeCameraModalBtn">×</button>
+    <button type="button" class="modal-close-btn" id="closeCameraModalBtn">&times;</button>
     <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem;">Kamera Peranti (1:1)</h3>
     <p style="font-size: 0.75rem; color: var(--text-muted);" id="cameraStatusSubtitle">Mengaktifkan lensa kamera...</p>
 
-<div class="camera-stream-wrapper" id="cameraWrapper">
+    <div class="camera-stream-wrapper" id="cameraWrapper">
       <video id="cameraVideo" autoplay playsinline webkit-playsinline muted style="width: 100%; height: 100%; object-fit: cover;"></video>
     </div>
 
-<div class="camera-controls-bottom" id="cameraControlsBottom">
+    <div class="camera-controls-bottom" id="cameraControlsBottom">
       <button type="button" class="action-btn-sm" id="flipCameraBtn" title="Tukar Kamera">
         <i class="fa-solid fa-arrows-rotate"></i>
       </button>
@@ -1678,11 +1675,11 @@ footer.app-footer {
 <!-- MODAL: DONATE / DUITNOW QR -->
 <div class="modal-backdrop" id="donateModal">
   <div class="modal-box" style="text-align: center;">
-    <button type="button" class="modal-close-btn" id="closeDonateModalBtn">×</button>
+    <button type="button" class="modal-close-btn" id="closeDonateModalBtn">&times;</button>
     <div style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.25rem; font-family: var(--font-title);">Sokong Inovasi</div>
     <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.85rem;">Terima kasih atas sokongan anda untuk pembangunan fitur baharu!</p>
 
-<div style="background: #fff; padding: 1rem; border-radius: var(--radius-md); display: inline-block; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); max-width: 260px; margin: 0 auto;">
+    <div style="background: #fff; padding: 1rem; border-radius: var(--radius-md); display: inline-block; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); max-width: 260px; margin: 0 auto;">
       <img
         src="https://i.postimg.cc/9Fxwv43T/MAE-QR-20261029-093107.jpg"
         id="donateQrImg"
@@ -2581,7 +2578,11 @@ if (toggleRecordBtn) {
         const options = mimeType ? { mimeType } : {};
         const targetSlot = currentAudioSlotIndex; // slot dikunci semasa mula rakam
 
-        mediaRecorder = new MediaRecorder(audioStream, options);
+        try {
+          mediaRecorder = new MediaRecorder(audioStream, options);
+        } catch (e1) {
+          mediaRecorder = new MediaRecorder(audioStream); // format lalai pelayar
+        }
         audioChunks = [];
 
         mediaRecorder.ondataavailable = e => {
@@ -2589,7 +2590,7 @@ if (toggleRecordBtn) {
         };
 
         mediaRecorder.onstop = () => {
-          const audioBlob = new Blob(audioChunks, { type: mimeType || 'audio/webm' });
+          const audioBlob = new Blob(audioChunks, { type: (mediaRecorder && mediaRecorder.mimeType) || mimeType || 'audio/webm' });
           const reader = new FileReader();
           reader.onload = (e) => {
             attachedAudios[targetSlot] = e.target.result;
@@ -2606,6 +2607,8 @@ if (toggleRecordBtn) {
 
         mediaRecorder.start(250);
         isRecording = true;
+        const errBox = document.getElementById('audioErrorMsg');
+        if (errBox) errBox.style.display = 'none';
         toggleRecordBtn.classList.add('recording');
         toggleRecordBtn.innerHTML = '<i class="fa-solid fa-stop"></i> Berhenti Rakam';
         recordingTimer.style.display = 'inline-block';
@@ -2621,17 +2624,22 @@ if (toggleRecordBtn) {
       } catch (err) {
         let reason = 'Rakaman gagal dimulakan.';
         if (!window.isSecureContext) {
-          reason = 'Mikrofon perlukan HTTPS. Cuba butang "Perakam Telefon".';
+          reason = 'Mikrofon perlukan HTTPS (atau localhost).';
         } else if (err && err.name === 'NotAllowedError') {
-          reason = 'Mikrofon disekat. Benarkan mikrofon untuk laman ini, atau guna "Perakam Telefon".';
+          reason = 'Mikrofon disekat. Benarkan mikrofon untuk laman ini di tetapan pelayar (ikon di sebelah alamat URL).';
         } else if (err && err.name === 'NotFoundError') {
           reason = 'Tiada mikrofon dikesan.';
         } else if (err && err.name === 'NotReadableError') {
           reason = 'Mikrofon sedang digunakan aplikasi lain.';
         } else if (err && err.message) {
-          reason = err.message + ' Cuba "Perakam Telefon".';
+          reason = err.message;
         }
         showToast(reason);
+        const errBoxShow = document.getElementById('audioErrorMsg');
+        if (errBoxShow) {
+          errBoxShow.textContent = reason;
+          errBoxShow.style.display = 'block';
+        }
         if (audioStream) {
           audioStream.getTracks().forEach(t => t.stop());
           audioStream = null;
@@ -2647,33 +2655,6 @@ if (toggleRecordBtn) {
       recordingTimer.style.display = 'none';
       clearInterval(recordingInterval);
     }
-  });
-}
-
-/* Alternatif: guna aplikasi perakam suara telefon */
-const phoneRecorderBtn = document.getElementById('phoneRecorderBtn');
-const audioSystemInput = document.getElementById('audioSystemInput');
-
-if (phoneRecorderBtn && audioSystemInput) {
-  phoneRecorderBtn.addEventListener('click', () => audioSystemInput.click());
-
-  audioSystemInput.addEventListener('change', (e) => {
-    const file = e.target.files && e.target.files[0];
-    audioSystemInput.value = '';
-    if (!file) return;
-    if (file.size > 4 * 1024 * 1024) {
-      showToast('Fail audio terlalu besar (maks 4MB).');
-      return;
-    }
-    const targetSlot = currentAudioSlotIndex;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      attachedAudios[targetSlot] = ev.target.result;
-      updateAudioSlotUI();
-      showToast(`Audio Slot ${targetSlot + 1} berjaya disimpan!`);
-    };
-    reader.onerror = () => showToast('Gagal membaca fail audio.');
-    reader.readAsDataURL(file);
   });
 }
 
