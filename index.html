@@ -1550,6 +1550,10 @@ footer.app-footer {
             <button type="button" class="record-btn" id="toggleRecordBtn">
               <i class="fa-solid fa-microphone"></i> Mula Rakam
             </button>
+            <button type="button" class="media-action-btn" id="phoneRecorderBtn" title="Guna perakam suara telefon">
+              <i class="fa-solid fa-mobile-screen"></i> Perakam Telefon
+            </button>
+            <input type="file" id="audioSystemInput" class="file-input-hidden" accept="audio/*" capture>
             <audio id="audioPlaybackElement" controls style="flex: 1; min-width: 120px; height: 32px; display: none;"></audio>
             <button type="button" class="action-btn-sm delete" id="deleteAudioSlotBtn" style="display: none;" title="Padam Audio Ini">
               <i class="fa-solid fa-trash"></i>
@@ -2615,7 +2619,23 @@ if (toggleRecordBtn) {
         }, 1000);
 
       } catch (err) {
-        showToast('Mikrofon disekat. Sila benarkan kebenaran Mikrofon di tetapan.');
+        let reason = 'Rakaman gagal dimulakan.';
+        if (!window.isSecureContext) {
+          reason = 'Mikrofon perlukan HTTPS. Cuba butang "Perakam Telefon".';
+        } else if (err && err.name === 'NotAllowedError') {
+          reason = 'Mikrofon disekat. Benarkan mikrofon untuk laman ini, atau guna "Perakam Telefon".';
+        } else if (err && err.name === 'NotFoundError') {
+          reason = 'Tiada mikrofon dikesan.';
+        } else if (err && err.name === 'NotReadableError') {
+          reason = 'Mikrofon sedang digunakan aplikasi lain.';
+        } else if (err && err.message) {
+          reason = err.message + ' Cuba "Perakam Telefon".';
+        }
+        showToast(reason);
+        if (audioStream) {
+          audioStream.getTracks().forEach(t => t.stop());
+          audioStream = null;
+        }
       }
     } else {
       if (mediaRecorder && mediaRecorder.state !== 'inactive') {
@@ -2627,6 +2647,33 @@ if (toggleRecordBtn) {
       recordingTimer.style.display = 'none';
       clearInterval(recordingInterval);
     }
+  });
+}
+
+/* Alternatif: guna aplikasi perakam suara telefon */
+const phoneRecorderBtn = document.getElementById('phoneRecorderBtn');
+const audioSystemInput = document.getElementById('audioSystemInput');
+
+if (phoneRecorderBtn && audioSystemInput) {
+  phoneRecorderBtn.addEventListener('click', () => audioSystemInput.click());
+
+  audioSystemInput.addEventListener('change', (e) => {
+    const file = e.target.files && e.target.files[0];
+    audioSystemInput.value = '';
+    if (!file) return;
+    if (file.size > 4 * 1024 * 1024) {
+      showToast('Fail audio terlalu besar (maks 4MB).');
+      return;
+    }
+    const targetSlot = currentAudioSlotIndex;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      attachedAudios[targetSlot] = ev.target.result;
+      updateAudioSlotUI();
+      showToast(`Audio Slot ${targetSlot + 1} berjaya disimpan!`);
+    };
+    reader.onerror = () => showToast('Gagal membaca fail audio.');
+    reader.readAsDataURL(file);
   });
 }
 
